@@ -7,15 +7,11 @@ section{
 }
 section > div {
     padding: 2%;
-    background-color: bisque;
-    border: 1px black solid;
+  
 }
 section > div:nth-child(3){
 grid-column: span 2;
 }
-
-
-
 button{
     padding: 15px 40px;
     background-color: rgba(0,136,169,1);
@@ -26,4 +22,13 @@ button{
 }
 button:hover{
     background-color: rgba(0,136,169,0.8);  
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+.home_img > img{
+   max-width: 70%;
 }

@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
 li, a, button {
-font-family: "Montserrat", sans-serif;
+
 font-weight: 500;
-font-size: 16px;
+font-size: 0.9375rem;
 color: black;
 text-decoration: none;
 list-style: none; /* Remove bullets */
@@ -20,7 +20,7 @@ header {
     flex-direction: row;
     background-color: aquamarine;
     list-style-type: none; /* Remove bullets */
-    padding: 30px 10%;
+    padding: 10px 10%;
     }
 .logo{
     cursor: pointer;
@@ -38,12 +38,12 @@ color: #0088a9;
 }
 button{
     padding: 9px 25px;
-    background-color: rgba(0,136,169,1);
+    background-color: rgb(237, 250, 58, 1);
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
 button:hover{
-    background-color: rgba(0,136,169,0.8);  
+    background-color: rgba(237, 250, 58,0.8);  
 }
