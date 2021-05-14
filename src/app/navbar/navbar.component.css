@@ -9,18 +9,25 @@ color: black;
 text-decoration: none;
 list-style: none; /* Remove bullets */
 }
-
+.sticky {
+    background-color: aquamarine;
+    box-shadow: 0 3px 12px 0 rgba(0,0,0,.08);
+    transition: all 0.3s ease 0.1s;
+}
 header {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0; /* required */
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items:center;
     flex-direction: row;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     list-style-type: none; /* Remove bullets */
     padding: 10px 10%;
+    background-size: cover;
+   
+    
     }
 .logo{
     cursor: pointer;
@@ -43,7 +50,9 @@ button{
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    border: 1px solid rgba(237, 250, 58, 1);
 }
 button:hover{
     background-color: rgba(237, 250, 58,0.8);  
+    border: 1px solid rgba(9, 95, 95, 0.5);
 }
