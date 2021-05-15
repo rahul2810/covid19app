@@ -14,7 +14,7 @@ section > * {
 }
 section > *:nth-child(1) /*Future Note: As the first element will be the header*/
 {
-    margin-top: 3rem;
+    margin-top: 1rem;
     font-size: 2.5rem;
 }
 section > *:nth-child(2) /*Future Note: As the first element will be the header*/
@@ -48,7 +48,7 @@ section > *:nth-child(2) /*Future Note: As the first element will be the header*
 }
 .block p {
    
- text-align: justify;
+ text-align: center;
 }
 section a{
     text-decoration: none;
