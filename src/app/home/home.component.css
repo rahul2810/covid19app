@@ -24,15 +24,7 @@ section > div {
 .block1 > h1,h2{
     font-size: 2rem;
 }
-section a{
-    text-decoration: none;
-    color: #007bff;
-    transition: all 0.8s ease 0s;
-    /* font-weight: bold; */
-}
-section a:hover{
-    color: #044c99;
-}
+
 
 
 section > div:nth-child(3){

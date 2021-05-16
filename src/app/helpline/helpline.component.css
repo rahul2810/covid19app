@@ -15,5 +15,11 @@ background-color: #f86168;
 color: #fff;
 border-radius: 25px;
 padding:2%;
-font-size: xx-large;
+font-size: 3rem;
+}
+
+@media (max-width: 480px) {
+.helpline-number{
+    font-size: 1rem;
+}
 }

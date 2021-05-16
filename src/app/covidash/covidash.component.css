@@ -50,15 +50,7 @@ section > *:nth-child(2) /*Future Note: As the second element will be the descri
    
  text-align: center;
 }
-section a{
-    text-decoration: none;
-    color: #007bff;
-    transition: all 0.8s ease 0s;
-    /* font-weight: bold; */
-}
-section a:hover{
-    color: #044c99;
-}
+
 
 section > div:nth-child(3){
 grid-column: span 2;

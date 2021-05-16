@@ -16,7 +16,7 @@ export class SymptomsComponent implements OnInit {
 
   openDialog(){
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = "60%";
+    dialogConfig.width = "100%";
     this.dialogRef.open(HelplineComponent,dialogConfig);
   }
 }
