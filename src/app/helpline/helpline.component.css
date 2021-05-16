@@ -1,0 +1,19 @@
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding:2%;
+}
+section > *{
+    
+    text-align: center;
+}
+.helpline-number{
+background-color: #f86168;
+color: #fff;
+border-radius: 25px;
+padding:2%;
+font-size: xx-large;
+}

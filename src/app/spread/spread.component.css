@@ -12,17 +12,15 @@ section > * {
     /* border: 1px black solid; */
     /* background-color:rgb(229, 217, 243); */
 }
-section > *:nth-child(1) img /*Future Note: As the first element will be the header*/
+section > *:nth-child(1) /*Future Note: As the first element will be the header*/
 {
-width: 20%;
+    margin-top: 1rem;
 }
-section > *:nth-child(2) /*Future Note: As the first element will be the header*/
+section > *:nth-child(1) > h1 
 {
     font-size: 2.5rem;
 }
-
-
-section > *:nth-child(3) /*Future Note: As the second element will be the descriptive text*/
+section > *:nth-child(2) /*Future Note: As the second element will be the descriptive text*/
 {
    max-width: 80%;
    margin: 0 auto;
@@ -42,7 +40,7 @@ section > *:nth-child(3) /*Future Note: As the second element will be the descri
 }
 .block > * {
     padding: 1rem;
-    max-width:100%; /* Note: Change this to change the width and spacing between boxes*/
+    /* max-width: 80%; */
     margin: 0 auto;
     border-radius: 1rem;
     background-color:  rgba(4, 178, 217, 0.3);
@@ -81,7 +79,7 @@ button:hover{
 }
 img {
     background-color: #fff;
-    max-width: 40%;
+    max-width: 50%;
     height: auto;
     vertical-align: middle;
     border-style: none;

@@ -1,4 +1,6 @@
-import { Component, OnInit,HostListener, Inject } from '@angular/core'; 
+import { Component, OnInit,HostListener, Inject } from '@angular/core';
+import { MatDialog, MatDialogConfig} from '@angular/material/dialog'; 
+import { HelplineComponent } from '../helpline/helpline.component';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -7,9 +9,17 @@ import { Component, OnInit,HostListener, Inject } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialogRef : MatDialog) { }
 
   ngOnInit(): void {}
+
+  openDialog(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = "60%";
+    this.dialogRef.open(HelplineComponent,dialogConfig);
+  }
+
+
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {

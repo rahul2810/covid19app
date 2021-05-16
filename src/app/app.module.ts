@@ -6,17 +6,30 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProtectComponent } from './protect/protect.component';
-
+import { Aboutcovid19Component } from './aboutcovid19/aboutcovid19.component';
+import { SymptomsComponent } from './symptoms/symptoms.component';
+import { SpreadComponent } from './spread/spread.component';
+import { CovidashComponent } from './covidash/covidash.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HelplineComponent } from './helpline/helpline.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    ProtectComponent
+    ProtectComponent,
+    Aboutcovid19Component,
+    SymptomsComponent,
+    SpreadComponent,
+    CovidashComponent,
+    HelplineComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
