@@ -45,20 +45,7 @@ section{
     align-items: center;  
     }
 
-    button{
-        padding: 1rem 2rem;
-        font-weight: bold;
-        background-color: rgba(4, 178, 217, 1);
-        color: white;
-        border: none;
-        border-radius: 3rem;
-        cursor: pointer;
-        transition: all 0.8s ease 0s;
-    }
-    button:hover{
-        background-color: rgba(4, 116, 141, 1);
-        
-    }
+   
     img {
         background-color: #fff;
         max-width:60%;

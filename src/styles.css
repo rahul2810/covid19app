@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
 *{
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
@@ -11,17 +12,39 @@
 p{
     font-size: 1rem;
 }
+a{
+    font-size: 1rem;
+    font-weight: 500;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 section a{
     text-decoration: none;
-    color: #007bff;
-    transition: all 0.8s ease 0s;
+    color: #04b18e;
+    
     /* font-weight: bold; */
 }
+
 section a:hover{
-    color: #044c99;
+    color: rgb(3, 84, 102);
 }
+button{
+    font-weight: bold;
+    background-color: #05a888;
+    padding: 1rem 2rem;
+    color: white;
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: all 0.8s ease 0s;
+}
+button:hover{
+    background-color: #048168;
+    
+}
+
+
+
 .grey{
     color:rgba(128, 128, 128, 0.89);
 }

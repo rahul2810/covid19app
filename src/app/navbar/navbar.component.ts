@@ -18,18 +18,14 @@ export class NavbarComponent implements OnInit {
     dialogConfig.width = "100%";
     this.dialogRef.open(HelplineComponent,dialogConfig);
   }
-
-
-
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(e) {
-     if (window.pageYOffset > 60) {
-       let element = document.getElementById('navbar');
-       element.classList.add('sticky');
-     } else {
-      let element = document.getElementById('navbar');
-        element.classList.remove('sticky'); 
+ active: boolean = false;
+  toggleNav(){
+    if(!this.active)
+     { this.active = true;} 
+     else{
+       this.active = false;
      }
-  } 
+  }
+ 
 
 }

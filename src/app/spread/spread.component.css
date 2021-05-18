@@ -55,20 +55,7 @@ section > *:nth-child(2) /*Future Note: As the second element will be the descri
 section > div:nth-child(3){
 grid-column: span 2;
 }
-button{
-    padding: 1rem 2rem;
-    font-weight: bold;
-    background-color: rgba(4, 178, 217, 1);
-    color: white;
-    border: none;
-    border-radius: 3rem;
-    cursor: pointer;
-    transition: all 0.8s ease 0s;
-}
-button:hover{
-    background-color: rgba(4, 116, 141, 1);
-    
-}
+
 img {
     background-color: #fff;
     max-width: 50%;

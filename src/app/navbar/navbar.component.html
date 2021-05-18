@@ -1,15 +1,23 @@
-<header id="navbar"  #stickyMenu>
-    <li class="logo">COVID19 APP</li>
-    <nav>
-        <ul class="nav_links">
-    <li><a routerLink="/home" routerLinkActive="router-link-active">Home</a></li>
-    <li><a routerLink="/about" routerLinkActive="router-link-active">About Corona</a></li>
-    <li><a routerLink="/symptoms" routerLinkActive="router-link-active">Symptoms</a></li>
-    <li><a routerLink="/spread" routerLinkActive="router-link-active">Spread</a></li>
-    <li><a routerLink="/protect" routerLinkActive="router-link-active">Prevention</a></li>
-    <li><a routerLink="/covidash" routerLinkActive="router-link-active">Covid19 Dashboard</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="brand-title">Covid App</div>
+        <a  class="toggle-button" (click)="toggleNav();">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links" [class.active]="active">
+            <ul>
+                <li><a routerLink="/home" routerLinkActive="router-link-active" (click)="toggleNav();">Home</a></li>
+                <li><a routerLink="/about" routerLinkActive="router-link-active" (click)="toggleNav();">About Corona</a></li>
+                <li><a routerLink="/symptoms" routerLinkActive="router-link-active" (click)="toggleNav();">Symptoms</a></li>
+                <li><a routerLink="/spread" routerLinkActive="router-link-active" (click)="toggleNav();">Spread</a></li>
+                <li><a routerLink="/protect" routerLinkActive="router-link-active" (click)="toggleNav();">Prevention</a></li>
+                <li><a routerLink="/covidash" routerLinkActive="router-link-active" (click)="toggleNav();">Covid19 Dashboard</a></li>
+                <a class="help"><button (click)="openDialog()">Helpline</button></a>
+            </ul>
+        </div>
+        
     </nav>
-<a class="help"><button (click)="openDialog()">Helpline</button></a>
-</header>
+
+
 
