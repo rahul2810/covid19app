@@ -67,8 +67,8 @@ img {
 /* Media Queries for Mobile */
 @media (max-width: 600px){
 section{
-    margin-top:15%;
-    padding: 1rem;
+    margin-top:30%;
+    padding: 0rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -104,6 +104,79 @@ order: -1;
 }
 p{
     text-align: justify;
+}
+/* to order one below other */
+/* .stats{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+} */
+
+.stats{
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "a a"
+      "b c"
+      "d e"
+      "f f"
+      "g g";
+      text-align: center;
+}
+.stats >:nth-child(1){
+    grid-area: a;
+    margin-top: 0
+}
+.stats >:nth-child(2){
+    grid-area: b;
+}
+.stats >:nth-child(3){
+    grid-area: c;
+}
+.stats >:nth-child(4){
+    grid-area: d;
+}
+.stats >:nth-child(5){
+    grid-area: e;
+}
+.stats >:nth-child(6){
+    grid-area: f;
+}
+/* As there is a break div we use 8 */
+.stats >:nth-child(8){ 
+    grid-area: g;
+    margin-bottom: 5%;
+}
+
+
+.stats > * {
+
+    width: 100%;
+}
+.stats > h1 {
+  font-size: 1.6rem; 
+  font-weight: 600; 
+}
+
+.stats>div>p:nth-child(1){
+    font-weight: 400;
+    letter-spacing: 0em;
+    font-size: 1.4rem;
+    margin-bottom: .5rem;
+    text-align: center;
+  
+}
+.stats>div>p:nth-child(2){
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem; 
+    font-weight: 500;
+    text-align: center;
+
 }
 }
     

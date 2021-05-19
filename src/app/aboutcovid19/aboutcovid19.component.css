@@ -13,9 +13,7 @@ section > * {
     /* border: 1px black solid; */
     /* background-color:rgb(229, 217, 243); */
 }
-section > *:nth-child(2){
-    max-width: 50%;
-}
+
 
 .block{
     
@@ -50,3 +48,53 @@ img {
 
     margin: 1rem;
 }
+/* Media Queries for Mobile */
+@media (max-width: 600px){
+    img {
+        max-width:80%;  
+    }
+    section{
+        max-width: 100%;
+        margin-top:15%;
+        padding: 0rem;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      
+    }
+    section > * {
+        margin: 0;
+         padding: 1rem;
+         /* border: 1px black solid; */
+         /* background-color:rgb(229, 217, 243); */
+     }
+    block{
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .block > h1,h2{
+        font-size: 1.6rem;
+        font-weight: bold;
+        
+    }
+    button{
+        font-size: 1rem;
+    
+    }
+    
+    p{
+        text-align: justify;
+    }
+    .linksblock {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        
+        }
+   
+    
+    }
