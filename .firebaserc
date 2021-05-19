@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "covid-app-afffb": {
+      "hosting": {
+        "covidapp": [
+          "covid-app-afffb"
+        ]
+      }
+    }
+  }
+}
