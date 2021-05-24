@@ -24,13 +24,14 @@ section > * {
 .block > h1,h2{
     font-size: 1.5rem;
 }
-.block *{
-margin-top: 1rem;
-}
+
 .linksblock {
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-auto-rows: auto;
+}
+.linksblock > *{
+    padding: 0.5rem;
 }
 
 
@@ -52,6 +53,7 @@ img {
 @media (max-width: 600px){
     img {
         max-width:80%;  
+        margin: 0;
     }
     section{
         max-width: 100%;
@@ -65,17 +67,16 @@ img {
     }
     section > * {
         margin: 0;
-         padding: 1rem;
+        padding: 1rem;
+
          /* border: 1px black solid; */
          /* background-color:rgb(229, 217, 243); */
      }
-    block{
-        padding: 5%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+     .block > * {
+         margin-top:0;
+         margin-bottom: 0;
+     }
+
     .block > h1,h2{
         font-size: 1.6rem;
         font-weight: bold;
@@ -93,6 +94,7 @@ img {
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
+        margin-top: 0;
         
         }
    

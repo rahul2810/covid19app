@@ -1,5 +1,5 @@
 section{
-    padding: 5rem;
+  padding: 5rem;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -12,17 +12,22 @@ section > * {
     /* border: 1px black solid; */
     /* background-color:rgb(229, 217, 243); */
 }
-section > *:nth-child(1) img /*Future Note: As the first element will be the header*/
+section > *:nth-child(1)
 {
-width: 20%;
+margin: 0;
 }
-section > *:nth-child(2) /*Future Note: As the first element will be the header*/
+section > *:nth-child(1) img 
+{
+width: 35%;
+margin: 0;
+}
+section > *:nth-child(2)
 {
     font-size: 2.5rem;
 }
 
 
-section > *:nth-child(3) /*Future Note: As the second element will be the descriptive text*/
+section > *:nth-child(3) 
 {
    max-width: 80%;
    margin: 0 auto;
@@ -99,6 +104,10 @@ img {
        margin: 0;
        padding:1rem;
        
+    }
+    section > h1 {
+        line-height: 1.3;
+        padding-bottom: 0;
     }
     .block{
         padding: 5%;

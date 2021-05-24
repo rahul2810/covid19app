@@ -15,11 +15,16 @@
 
 }
 .brand-title {
+   
+    margin: 1rem;
+    margin-left:10%;
+
+}
+.brand-title a{
+    text-decoration: none;
     color: #04b18e;
     font-size:2.6vh;
     font-weight: 500;
-    margin: 1rem;
-    margin-left:10%;
 }
 .navbar-links ul {
     margin: 0;
