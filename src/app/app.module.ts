@@ -13,6 +13,7 @@ import { CovidashComponent } from './covidash/covidash.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HelplineComponent } from './helpline/helpline.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { HelplineComponent } from './helpline/helpline.component';
     SymptomsComponent,
     SpreadComponent,
     CovidashComponent,
-    HelplineComponent
+    HelplineComponent,
+    HttpClientModule
   ],
   imports: [
     BrowserModule,

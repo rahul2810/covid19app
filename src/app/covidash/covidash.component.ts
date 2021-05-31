@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpService} from '../http.service';
 
 @Component({
   selector: 'app-covidash',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CovidashComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpService) { }
 
   ngOnInit(): void {
+    this.http.test();
+    this.http.getCovidData().subscribe(data => console.log(data));
   }
 
 }
