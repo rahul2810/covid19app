@@ -9,10 +9,19 @@ import {HttpService} from '../http.service';
 export class CovidashComponent implements OnInit {
 
   constructor(private http: HttpService) { }
-
+public coviddata: [];
   ngOnInit(): void {
     this.http.test();
-    this.http.getCovidData().subscribe(data => console.log(data));
+    this.http.getCovidData().subscribe({
+      next: data => {this.coviddata = data},
+      error: error => {console.log(error)},
+      complete: () => console.log(this.coviddata)
+    });
+    
+
+    
+      
+ 
   }
 
 }

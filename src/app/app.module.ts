@@ -24,14 +24,14 @@ import { HttpClientModule } from '@angular/common/http';
     SymptomsComponent,
     SpreadComponent,
     CovidashComponent,
-    HelplineComponent,
-    HttpClientModule
+    HelplineComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
