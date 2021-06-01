@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from '../http.service';
-
+import {ICovidApi} from '../icovid-api';
 @Component({
   selector: 'app-covidash',
   templateUrl: './covidash.component.html',
@@ -9,7 +9,7 @@ import {HttpService} from '../http.service';
 export class CovidashComponent implements OnInit {
 
   constructor(private http: HttpService) { }
-public coviddata: [];
+public coviddata: ICovidApi;
   ngOnInit(): void {
     this.http.test();
     this.http.getCovidData().subscribe({
