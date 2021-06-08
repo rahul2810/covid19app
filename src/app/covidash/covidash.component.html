@@ -3,9 +3,32 @@
     
         <h1>Covid19 Dashboard</h1>
         <h1>Live Statistical Data on COVID19</h1>
-        <small class="mt grey"><i>* Last updated: May 14, 2021, 12:24 PM India/Delhi</i></small>
-      
-
+       <small class="mt grey"><i>* Last updated: {{this.lastUpdatedDate| date: 'EEEE, dd/MM/yyyy, h:mm a'}} India/Delhi</i></small>
+       
+        <table style="  border-collapse: separate;
+        border-spacing: 0 1em;" *ngIf = "this.coviddata">
+           <tr >
+               <th style="width:20%;">State</th>
+               <th>Last Updated</th>
+               <th>active</th>
+               <th>Confirmed</th>
+               <th>Deaths</th>
+               <th>Recovered</th>
+               <th style="width:30%;">State Notes</th>
+           </tr>
+          
+            <tr style="background-color: rgb(255, 254, 182);" *ngFor="let rows of this.stateArray">
+                <td>{{rows["state"]}}</td>
+                <td>{{rows["lastupdatedtime"]}}</td>
+                <td>{{rows["active"]}}</td>
+                <td>{{rows["confirmed"]}}</td>
+                <td>{{rows["deaths"]}}</td>
+                <td>{{rows["recovered"]}}</td>
+                <td>{{rows["statenotes"]}}</td>
+               </tr>
+          
+           
+        </table>
    
     
     

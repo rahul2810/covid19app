@@ -1,22 +1,59 @@
+// export interface ICovidApi {
+//     error: boolean;
+//     statusCode: number;
+//     message: string;
+//     data: coviddata;
+// }
+
+// interface coviddata {
+//     lastChecked: Date;
+//     covid19Stats: covid19Stats[];
+// }
+// interface covid19Stats {
+    
+//         city?: any,
+//         province: string,
+//         country: string,
+//         lastUpdate: Date,
+//         keyId: string,
+//         confirmed: number,
+//         deaths: number,
+//         recovered: number
+//     }
 export interface ICovidApi {
-    "error": boolean,
-    "statusCode": number,
-    "message": string,
-    "data": coviddata
+    key_values?: any;
+    total_values: total_values;
+    state_wise: object[];
 }
 
-interface coviddata {
-    "lastChecked": string,
-    "covid19Stats": covid19Stats[]
+interface total_values {
+    active: number;
+    confirmed: number;
+    deaths: number;
+    deltaconfirmed: number;
+    deltadeaths: number;
+    deltarecovered: number;
+    lastupdatedtime: Date;
+    migratedother: number;
+    recovered: number;
+    state: string;
+    statecode: string;
+    statenotes: string;
 }
-interface covid19Stats {
+// interface state_wise {
     
-        "city": string,
-        "province": string,
-        "country": string,
-        "lastUpdate": string,
-        "keyId": string,
-        "confirmed": number,
-        "deaths": number,
-        "recovered": number
-    }
+//         city?: any,
+//         province: string,
+//         country: string,
+//         lastUpdate: Date,
+//         keyId: string,
+//         confirmed: number,
+//         deaths: number,
+//         recovered: number
+//     }
+
+
+
+
+
+

@@ -9,13 +9,47 @@ import {ICovidApi} from '../icovid-api';
 export class CovidashComponent implements OnInit {
 
   constructor(private http: HttpService) { }
-public coviddata: ICovidApi;
+  public lastUpdatedDate: Date;
+  public coviddata: ICovidApi;
+  public stateArray = [];
   ngOnInit(): void {
     this.http.test();
     this.http.getCovidData().subscribe({
       next: data => {this.coviddata = data},
       error: error => {console.log(error)},
-      complete: () => console.log(this.coviddata)
+      complete: () => {
+        
+       
+        this.lastUpdatedDate = this.coviddata.total_values.lastupdatedtime;
+        for(let i in this.coviddata.state_wise)
+        {
+        
+          let district = [];
+   
+          for(let j in this.coviddata.state_wise[i]["district"] )
+          {
+         
+            
+         
+            let districtInfo = [];
+            // console.log(this.coviddata.state_wise[i]["district"][j])
+            
+            // for(let k in this.coviddata.state_wise[i]["district"][j])
+            // {
+            //   district["districtName"].push(j);
+            //   districtInfo.push(this.coviddata.state_wise[i]["district"][j][k]);
+            // }
+         
+            district.push( this.coviddata.state_wise[i]["district"]);
+            // let districtName = Object.keys(this.coviddata.state_wise[i]["district"]);
+            // tempArray.push("");
+            // tempArray.push(this.coviddata.state_wise[j]);
+          }
+          console.log(district[0]["East Garo Hills"]); //I'm Making some fundamental mistake here. No idea what
+          this.stateArray.push(this.coviddata.state_wise[i]);
+        }
+      
+      }
     });
     
 

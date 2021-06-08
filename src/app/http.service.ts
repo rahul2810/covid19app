@@ -15,13 +15,13 @@ export class HttpService {
 
  
 
-  private apiurl : string = "https://covid19india.p.rapidapi.com/getIndiaStateData";
+  private apiurl : string = "https://corona-virus-world-and-india-data.p.rapidapi.com/api_india";
  
-  getCovidData() : Observable<ICovidApi>
+  getCovidData() : Observable<any>
   {
-  return this.http.get<ICovidApi>(this.apiurl, { headers: {
+   return this.http.get<any>(this.apiurl, { headers: {
         "x-rapidapi-key": "d100ff7668mshda7f41ca4792d9bp1f42dcjsn12bbdbc54c71",
-        "x-rapidapi-host": "covid19india.p.rapidapi.com"}
+        "x-rapidapi-host": "corona-virus-world-and-india-data.p.rapidapi.com"}
       });
   }
 
