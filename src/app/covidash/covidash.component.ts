@@ -32,7 +32,7 @@ export class CovidashComponent implements OnInit {
             
          
             let districtInfo = [];
-            // console.log(this.coviddata.state_wise[i]["district"][j])
+            console.log(this.coviddata.state_wise[i]["district"][j])
             
             // for(let k in this.coviddata.state_wise[i]["district"][j])
             // {
@@ -40,13 +40,13 @@ export class CovidashComponent implements OnInit {
             //   districtInfo.push(this.coviddata.state_wise[i]["district"][j][k]);
             // }
          
-            district.push( this.coviddata.state_wise[i]["district"]);
+          //  district.push( this.coviddata.state_wise[i]["district"]);
             // let districtName = Object.keys(this.coviddata.state_wise[i]["district"]);
             // tempArray.push("");
             // tempArray.push(this.coviddata.state_wise[j]);
           }
-          console.log(district[0]["East Garo Hills"]); //I'm Making some fundamental mistake here. No idea what
-          this.stateArray.push(this.coviddata.state_wise[i]);
+          // console.log(district[0]["East Garo Hills"]); //I'm Making some fundamental mistake here. No idea what
+          this.stateArray.push(this.coviddata.state_wise[i]); //This feeds statewise data
         }
       
       }
