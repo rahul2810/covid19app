@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HelplineComponent } from './helpline/helpline.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AgGridModule } from 'ag-grid-angular';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,8 +32,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgxChartsModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    AgGridModule.withComponents([])
   ],
   providers: [],
   bootstrap: [AppComponent]

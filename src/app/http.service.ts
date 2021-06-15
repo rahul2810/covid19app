@@ -9,12 +9,6 @@ export class HttpService {
 
   constructor( private http : HttpClient) { }
 
-  test(){
-    console.log("test service is active and works like a charm!!!");
-  }
-
- 
-
   private apiurl : string = "https://corona-virus-world-and-india-data.p.rapidapi.com/api_india";
  
   getCovidData() : Observable<any>

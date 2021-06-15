@@ -3,35 +3,159 @@
     
         <h1>Covid19 Dashboard</h1>
         <h1>Live Statistical Data on COVID19</h1>
-       <small class="mt grey"><i>* Last updated: {{this.lastUpdatedDate| date: 'EEEE, dd/MM/yyyy, h:mm a'}} India/Delhi</i></small>
-       
-        <table style="  border-collapse: separate;
-        border-spacing: 0 1em;" *ngIf = "this.coviddata">
-           <tr >
-               <th style="width:20%;">State</th>
-               <th>Last Updated</th>
-               <th>active</th>
-               <th>Confirmed</th>
-               <th>Deaths</th>
-               <th>Recovered</th>
-               <th style="width:30%;">State Notes</th>
-           </tr>
-          
-            <tr style="background-color: rgb(255, 254, 182);" *ngFor="let rows of this.stateArray">
-                <td>{{rows["state"]}}</td>
-                <td>{{rows["lastupdatedtime"]}}</td>
-                <td>{{rows["active"]}}</td>
-                <td>{{rows["confirmed"]}}</td>
-                <td>{{rows["deaths"]}}</td>
-                <td>{{rows["recovered"]}}</td>
-                <td>{{rows["statenotes"]}}</td>
-               </tr>
-          
-           
-        </table>
+       <small class="mt grey"><i>* Last updated: {{this.lastUpdatedDate}} India/Delhi</i></small>
+<!-- below view for smaller screens-->
+ <div class="mobile_view" *ngIf = "this.showStats">
+    <h2>Active Cases</h2>
+       <ngx-charts-bar-horizontal 
+       [view] = [500,100]
+       [scheme]="colorSchemeActive"
+       [results]="activeArray"
+       [xAxisLabel]="'States'"
+       [legendTitle]="'States'"
+       [yAxisLabel]="'Active Cases'"
+       [legend]="false"
+       [showXAxisLabel]="true"
+       [showYAxisLabel]="true"
+       [xAxis]="true"
+       [yAxis]="true"
+       [gradient]="false">
+   </ngx-charts-bar-horizontal>
+</div>
+
+<div class="mobile_view" *ngIf = "this.showStats">
+   <h2>Confirmed Cases</h2>
+      <ngx-charts-bar-horizontal
+      [scheme]="colorSchemeConfirmed"
+      [results]="confirmedArray"
+      [xAxisLabel]="'States'"
+      [legendTitle]="'States'"
+      [yAxisLabel]="'Confirmed Cases'"
+      [legend]="false"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      [gradient]="false">
+  </ngx-charts-bar-horizontal>
+</div>
+
+<div class="mobile_view" *ngIf = "this.showStats">
+   <h2>Recovered Cases</h2>
+      <ngx-charts-bar-horizontal 
+      [scheme]="colorSchemeRecovered"
+      [results]="recoveredArray"
+      [xAxisLabel]="'States'"
+      [legendTitle]="'States'"
+      [yAxisLabel]="'Recovered Cases'"
+      [legend]="false"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      [gradient]="false">
+  </ngx-charts-bar-horizontal>
+</div>
+
+<div class="mobile_view" *ngIf = "this.showStats">
+   <h2>Deaths</h2>
+      <ngx-charts-bar-horizontal
+      [scheme]="colorSchemeDeaths"
+      [results]="deathsArray"
+      [xAxisLabel]="'States'"
+      [legendTitle]="'States'"
+      [yAxisLabel]="'Deaths'"
+      [legend]="false"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      [gradient]="false">
+  </ngx-charts-bar-horizontal>
+</div>
+
+<!-- Below view for default screens -->
+<!-- <div class="default_view"> -->
+<div class="default_view" *ngIf = "this.showStats">
+    <h2>Active Cases</h2>
+       <ngx-charts-bar-vertical 
+       [scheme]="colorSchemeActive"
+       [results]="activeArray"
+       [xAxisLabel]="'States'"
+       [legendTitle]="'States'"
+       [yAxisLabel]="'Active Cases'"
+       [legend]="false"
+       [showXAxisLabel]="true"
+       [showYAxisLabel]="true"
+       [xAxis]="true"
+       [yAxis]="true"
+       [gradient]="false">
+   </ngx-charts-bar-vertical>
    
-    
-    
-    
+</div>
+
+<div class="default_view" *ngIf = "this.showStats">
+    <h2>Confirmed Cases</h2>
+       <ngx-charts-bar-vertical 
+       [scheme]="colorSchemeConfirmed"
+       [results]="confirmedArray"
+       [xAxisLabel]="'States'"
+       [legendTitle]="'States'"
+       [yAxisLabel]="'Confirmed Cases'"
+       [legend]="false"
+       [showXAxisLabel]="true"
+       [showYAxisLabel]="true"
+       [xAxis]="true"
+       [yAxis]="true"
+       [gradient]="false">
+   </ngx-charts-bar-vertical>
+</div>
+
+<div class="default_view" *ngIf = "this.showStats">
+    <h2>Recovered Cases</h2>
+       <ngx-charts-bar-vertical 
+       [scheme]="colorSchemeRecovered"
+       [results]="recoveredArray"
+       [xAxisLabel]="'States'"
+       [legendTitle]="'States'"
+       [yAxisLabel]="'Recovered Cases'"
+       [legend]="false"
+       [showXAxisLabel]="true"
+       [showYAxisLabel]="true"
+       [xAxis]="true"
+       [yAxis]="true"
+       [gradient]="false">
+   </ngx-charts-bar-vertical>
+</div>
+
+<div class="default_view" *ngIf = "this.showStats">
+    <h2>Deaths</h2>
+       <ngx-charts-bar-vertical 
+       [scheme]="colorSchemeDeaths"
+       [results]="deathsArray"
+       [xAxisLabel]="'States'"
+       [legendTitle]="'States'"
+       [yAxisLabel]="'Deaths'"
+       [legend]="false"
+       [showXAxisLabel]="true"
+       [showYAxisLabel]="true"
+       [xAxis]="true"
+       [yAxis]="true"
+       [gradient]="false">
+   </ngx-charts-bar-vertical>
+</div>
+
+<div *ngIf = "this.showStats">
+    <h2>Covid Summary</h2>
+    <!-- Using ag-grid to display API Data -->
+    <ag-grid-angular 
+    style="height: 500px; background-color: aquamarine;"
+    class="ag-theme-alpine"
+    [rowData]="this.stateArray2"
+    [columnDefs]="columnDef"
+   >
+</ag-grid-angular>
+</div>
+
     </section>
     

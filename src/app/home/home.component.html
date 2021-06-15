@@ -18,28 +18,28 @@
 <img src="assets/covid.png" alt="Covid Family Image">
 </div>
 
-<div class="stats">
+<div class="stats" *ngIf="this.showStats">
     <h1>India Statistics</h1>
   
     <div>
-    <p>10,618,798</p>
+    <p>{{this.coviddata.total_values.confirmed| number}}</p>
     <p class="grey">Confirmed</p>
     </div>
     <div>
-    <p>3,360,170</p>
+    <p>{{this.coviddata.total_values.active| number}}</p>
     <p class="blue">Active</p>
     </div>
     <div>
-    <p>3,360,170</p>
+    <p>{{this.coviddata.total_values.deaths| number}}</p>
     <p class="red">Deaths</p>
     </div>
     <div>
-    <p>3,360,170</p>
+    <p>{{this.coviddata.total_values.recovered| number}}</p>
     <p class="green" >Recovered</p>
     </div>
     <a routerLink="/covidash"><button>Launch Dashboard</button></a>
     <div class="break"></div>
-    <small class="mt grey"><i>* Last updated: May 14, 2021, 12:24 PM India/Delhi</i></small>
+    <small class="mt grey"><i>* Last updated: {{this.coviddata.total_values.lastupdatedtime}} India/Delhi</i></small>
 
   
 </div>

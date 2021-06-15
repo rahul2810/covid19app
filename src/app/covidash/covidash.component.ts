@@ -12,8 +12,28 @@ export class CovidashComponent implements OnInit {
   public lastUpdatedDate: Date;
   public coviddata: ICovidApi;
   public stateArray = [];
+  public stateArray2 = [];
+  public activeArray = [];
+  public confirmedArray = [];
+  public deathsArray = [];
+  public recoveredArray = [];
+
+  public showStats:boolean = false;
+  //color scheme
+  public colorSchemeActive = {domain: ['#2DE0B4']};
+  public colorSchemeConfirmed = {domain: ['#F79820']};
+  public colorSchemeDeaths = {domain: ['#ED786B']}
+  public colorSchemeRecovered = {domain: ['#2DABE0']};
+
+  public columnDef = [
+      {field: 'State',  sortable: true, filter: true, cellStyle: { 'text-align': 'left' }},
+      {field: 'Updated', sortable: false, filter:false, cellStyle: { 'text-align': 'left' }},
+      {field: 'Active', sortable: true, filter: true, cellStyle: { 'text-align': 'left' }},
+      {field: 'Confirmed', sortable: true, filter: true, cellStyle: { 'text-align': 'left' }},
+      {field: 'Deaths', sortable: true, filter: true, cellStyle: { 'text-align': 'left' }},
+      {field: 'Recovered', sortable: true, filter: true, cellStyle: { 'text-align': 'left' }}];
+
   ngOnInit(): void {
-    this.http.test();
     this.http.getCovidData().subscribe({
       next: data => {this.coviddata = data},
       error: error => {console.log(error)},
@@ -21,34 +41,57 @@ export class CovidashComponent implements OnInit {
         
        
         this.lastUpdatedDate = this.coviddata.total_values.lastupdatedtime;
+       
         for(let i in this.coviddata.state_wise)
-        {
-        
-          let district = [];
-   
-          for(let j in this.coviddata.state_wise[i]["district"] )
-          {
-         
-            
-         
-            let districtInfo = [];
-            console.log(this.coviddata.state_wise[i]["district"][j])
-            
-            // for(let k in this.coviddata.state_wise[i]["district"][j])
-            // {
-            //   district["districtName"].push(j);
-            //   districtInfo.push(this.coviddata.state_wise[i]["district"][j][k]);
-            // }
-         
-          //  district.push( this.coviddata.state_wise[i]["district"]);
-            // let districtName = Object.keys(this.coviddata.state_wise[i]["district"]);
-            // tempArray.push("");
-            // tempArray.push(this.coviddata.state_wise[j]);
-          }
-          // console.log(district[0]["East Garo Hills"]); //I'm Making some fundamental mistake here. No idea what
+        {  
           this.stateArray.push(this.coviddata.state_wise[i]); //This feeds statewise data
         }
       
+      //Pushing data to stateArray2 for Data Table
+        for(let i in this.stateArray){
+          
+            let stateStat = 
+              {'State' :this.stateArray[i].state, 
+               'Updated' : this.stateArray[i].lastupdatedtime,
+               'Active' : Number(this.stateArray[i].active),
+               'Confirmed' : Number(this.stateArray[i].confirmed),
+               'Deaths' : Number(this.stateArray[i].deaths),
+               'Recovered' : Number(this.stateArray[i].recovered),
+
+              };
+              this.stateArray2.push(stateStat);
+        }
+      
+        //Pushing data  for Chart
+
+        for(let i in this.stateArray2){
+          
+          let activeStat = 
+            {'name' :this.stateArray[i].state, 
+             'value' : Number(this.stateArray[i].active),
+            };
+          let confirmedStat = 
+            {'name' :this.stateArray[i].state, 
+             'value' : Number(this.stateArray[i].confirmed),
+            };
+          let deathsStat = 
+            {'name' :this.stateArray[i].state, 
+             'value' : Number(this.stateArray[i].deaths),
+            };
+          let recoveredStat = 
+            {'name' :this.stateArray[i].state, 
+             'value' : Number(this.stateArray[i].recovered),
+            };
+
+            this.confirmedArray.push(confirmedStat);
+            this.deathsArray.push(deathsStat);
+            this.recoveredArray.push(recoveredStat);
+            this.activeArray.push(activeStat);
+      }
+
+
+        console.log(this.activeArray);
+        this.showStats = true;
       }
     });
     
