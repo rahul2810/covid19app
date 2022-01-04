@@ -148,11 +148,15 @@
 <div *ngIf = "this.showStats">
     <h2>Covid Summary</h2>
     <!-- Using ag-grid to display API Data -->
+    <input type="text" (keyup)="quickSearch()" [(ngModel)] = "searchValue" placeholder="quick filter..."/>
     <ag-grid-angular 
     style="height: 500px; background-color: aquamarine;"
     class="ag-theme-alpine"
     [rowData]="this.stateArray2"
-    [columnDefs]="columnDef"
+    [columnDefs]="this.columnDef"
+    [allowFiltering]='true'
+    [animateRows]= "true"
+    (gridReady) = "onGridReady($event)"
    >
 </ag-grid-angular>
 </div>

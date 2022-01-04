@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HelplineComponent } from './helpline/helpline.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AgGridModule } from 'ag-grid-angular';
+import {FormsModule} from '@angular/forms'
 import { NgxChartsModule }from '@swimlane/ngx-charts';
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
     NgxChartsModule,
     MatDialogModule,
     HttpClientModule,
+    FormsModule,
     AgGridModule.withComponents([])
   ],
   providers: [],

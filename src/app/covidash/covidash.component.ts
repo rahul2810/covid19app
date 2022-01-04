@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from '../http.service';
 import {ICovidApi} from '../icovid-api';
+import { AgGridModule } from 'ag-grid-angular';
+
 @Component({
   selector: 'app-covidash',
   templateUrl: './covidash.component.html',
@@ -17,6 +19,9 @@ export class CovidashComponent implements OnInit {
   public confirmedArray = [];
   public deathsArray = [];
   public recoveredArray = [];
+  public gridApi;
+  public searchValue;
+ 
 
   public showStats:boolean = false;
   //color scheme
@@ -32,8 +37,18 @@ export class CovidashComponent implements OnInit {
       {field: 'Confirmed', sortable: true, filter: true, cellStyle: { 'text-align': 'left' }},
       {field: 'Deaths', sortable: true, filter: true, cellStyle: { 'text-align': 'left' }},
       {field: 'Recovered', sortable: true, filter: true, cellStyle: { 'text-align': 'left' }}];
-
   ngOnInit(): void {
+function onGridReady(params){
+  this.gridApi = params.api;
+  this.gridColumnApi = params.columnApi;
+  
+}
+function quickSearch()
+{
+this.gridApi.setQuickFilter(this.searchValue);
+}
+
+
     this.http.getCovidData().subscribe({
       next: data => {this.coviddata = data},
       error: error => {console.log(error)},
@@ -90,7 +105,7 @@ export class CovidashComponent implements OnInit {
       }
 
 
-        console.log(this.activeArray);
+        // console.log(this.activeArray);
         this.showStats = true;
       }
     });
