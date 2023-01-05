@@ -1,4 +1,9 @@
-# Covidapp
+# Covid19 App
+
+'Covid19 App' is a Mobile responsive WebApp built to spread awareness of Covid19. App also pulls live Covid19 Statistical data from public Apis. Built with love and pure Angular & CSS (Flex-box & Grid). Deployed over Google Firebase. :mask: ✨ 
+
+<img width="1462" alt="Screenshot 2023-01-05 at 10 42 28 PM" src="https://user-images.githubusercontent.com/7770266/210840239-8b0f9a84-76f3-4549-b5b0-0be36fc39952.png">
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
